@@ -10,22 +10,31 @@ const app = express()
 app.use(express.static('dist'))
 
 console.log(__dirname)
-console.log(`API key: ${process.env.API_KEY}`);
 
 // set aylien API credentias
-var nlpApi = new aylien({
+const textapi = new aylien({
     application_id: process.env.APP_ID,
-    application_key: process.env.API_KEY
-  });
+    application_key: process.env.API_KEY,
+});
+
+// textapi.sentiment({
+//     text: 'John is a very good football player',
+//     mode: 'tweet',
+// }, function (error, response) {
+//     if (error === null) {
+//         console.log(response);
+//     } else {
+//         console.log(error);
+//     }
+// });
 
 app.get('/', function (req, res) {
-    // res.sendFile('dist/index.html')
-    res.sendFile(path.resolve('src/client/views/index.html'))
+    res.sendFile('dist/index.html')
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(8080, function () {
-    console.log('Example app listening on port 8080!')
+app.listen(8000, function () {
+    console.log('Example app listening on port 8000!')
 })
 
 app.get('/test', function (req, res) {
