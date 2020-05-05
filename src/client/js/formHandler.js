@@ -3,9 +3,11 @@ function handleSubmit(event) {
 
     // check what text was put into the form field
     let formText = document.getElementById('name').value
-    Client.checkForName(formText)
+    let url = Client.checkURL(formText)
+    console.log(url)
 
     console.log("::: Form Submitted :::")
+
     fetch('http://localhost:8000/test')
         .then(res => res.json())
         .then(function (res) {

@@ -31,21 +31,22 @@ app.listen(8000, function () {
 })
 
 app.get('/test', function (req, res) {
-    textapi.sentiment({
-        text: 'John is a very good football player',
-        mode: 'tweet',
-    }, function (error, response) {
-        if (error === null) {
-            const analyzedData = {
-                tone: response.polarity,
-                subjectivity: response.subjectivity,
-            }
-            projectData["analyzedData"] = analyzedData;
-            console.log(projectData);
-            res.send(projectData);
-        } else {
-            console.log(error);
-            alert("Sorry! We cannot process your request at the moment")
-        }
-    });
+    // textapi.sentiment({
+    //     text: 'John is a very good football player',
+    //     mode: 'tweet',
+    // }, function (error, response) {
+    //     if (error === null) {
+    //         const analyzedData = {
+    //             tone: response.polarity,
+    //             subjectivity: response.subjectivity,
+    //         }
+    //         projectData["analyzedData"] = analyzedData;
+    //         console.log(projectData);
+    //         res.send(projectData);
+    //     } else {
+    //         console.log(error);
+    //         alert("Sorry! We cannot process your request at the moment")
+    //     }
+    // });
+    res.send(mockAPIResponse);
 })
