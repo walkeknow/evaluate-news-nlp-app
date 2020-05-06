@@ -29,8 +29,11 @@ function submitForm(inputObject = {}) {
 
 function updateUI(res) {
     const entry = res.analyzedData;
-    document.getElementById('tone').innerHTML = `<span class="label">Tone:</span> ${entry.tone}`;
-    document.getElementById('subjectivity').innerHTML = `<span class="label">Subjectivity:</span> ${entry.subjectivity}`;
+    const tone = document.getElementById('tone');
+    const subjectivity = document.getElementById('subjectivity');
+    tone.innerHTML = `<span class="label">Tone:</span> ${entry.tone}`;
+    subjectivity.innerHTML = `<span class="label">Subjectivity:</span> ${entry.subjectivity}`;
+    return ([tone.innerHTML, subjectivity.innerHTML]);
 }
 
 function handleSubmit(event) {
@@ -51,5 +54,5 @@ function handleSubmit(event) {
     submitForm(inputObject);
 }
 
-export { handleSubmit }
+export { updateUI }
 export { sendData }
