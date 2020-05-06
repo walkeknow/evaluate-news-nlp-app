@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-    </head>
 
-    <body>
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+</head>
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+<body>
 
-        <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Enter complete URL of an article">
-                    <input type="submit" name="" value="submit">
-                </form>
+    <header>
+        <p>Sentiment Analysis of News Articles</p>
+    </header>
+
+    <main>
+        <section>
+            <form class="" onsubmit="return Client.handleSubmit(event)">
+                <input id="name" type="text" name="input" value="" placeholder="Enter complete URL of an article">
+                <button type="submit" name="" value="submit" id="button">Analyze</button>
+            </form>
             <section>
 
-            <section>
-                <strong>Form Results:</strong>
+            <section class="result-conatiner">
+                <h3 class="subheading">Form Results</h3>
                 <div id="results">
                     <div id="tone"></div>
                     <div id="subjectivity"></div>
                 </div>
             </section>
-        </main>
+    </main>
 
-        <footer>
-            <p>This is a footer</p>
-        </footer>
+    <footer>
+        <p>Kewal Shah 2020</p>
+    </footer>
 
-    </body>
+</body>
+
 </html>

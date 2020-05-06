@@ -1,12 +1,67 @@
-form {
-    border: 1px solid #545454;
-    border-radius: 3px;
-    padding: 40px;
+@use 'variables';
+
+%box-border {
+    border-radius: 5px;
 }
 
-input {
-    padding: 5px 20px;
-    width: 100%;
-    line-height: 16px;
-    margin: 10px 0;
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    font-family: variables.$primary-font;
+    background-color: variables.$primary-color;
+    height: 30vh;
+    @extend %box-border;
+
+    input {
+        padding: 5px 10px;
+        width: 100%;
+        margin: 10px 0;
+        flex: 3;
+        font-size: 1.2em;
+    }
+
+    button {
+        flex: 2;
+        @extend %box-border;
+        font-size: 1em;
+        border: 5px solid variables.$primary-color-dark;
+        background-color: variables.$primary-color;
+        color: gainsboro;
+        &:hover {
+            background-color: variables.$primary-color-dark;
+            cursor: pointer;
+            opacity: 1;
+        }
+        &:active {
+            opacity: 0.8;
+        }
+    }
+}
+
+.subheading {
+    font: 600 1em variables.$primary-font;
+    text-align: center;
+}
+
+#results {
+    height: 20vh;
+    background-color: variables.$secondary-color;
+    opacity: 0.9;
+    margin-top: 5px;
+    @extend %box-border;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#tone, #subjectivity{
+    font: 1.2em variables.$primary-font;
+    padding: 5px;
+    color: variables.$primary-color-dark;
+}
+
+.label {
+    font: 600 1em variables.$primary-font
 }

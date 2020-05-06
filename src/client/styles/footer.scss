@@ -1,0 +1,12 @@
+@use 'variables';
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: variables.$secondary-color;
+    border-top: 5px solid variables.$primary-color;
+    p {
+        font: 400 0.8em variables.$primary-font;
+    }
+}

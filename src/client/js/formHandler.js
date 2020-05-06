@@ -5,6 +5,7 @@ function handleSubmit(event) {
     let formText = document.getElementById('name').value
     let url = Client.checkURL(formText)
     console.log("::: Form Submitted :::")
+    document.getElementById('tone').innerHTML = `Loading...`;
 
     const inputObject = {
         url,
@@ -27,14 +28,15 @@ function handleSubmit(event) {
             const responseData = response.json();
             return responseData;
         } catch (error) {
+            document.getElementById('tone').innerHTML = ``;
             console.log("error", error)
         }
     }
 
     function updateUI(res) {
         const entry = res.analyzedData;
-        document.getElementById('tone').innerHTML = `<strong>Tone:</strong> ${entry.tone}`;
-        document.getElementById('subjectivity').innerHTML = `<strong>Subjectivity:</strong> ${entry.subjectivity}`;
+        document.getElementById('tone').innerHTML = `<span class="label">Tone:</span> ${entry.tone}`;
+        document.getElementById('subjectivity').innerHTML = `<span class="label">Subjectivity:</span> ${entry.subjectivity}`;
     }
 
     sendData('/sendData', inputObject)

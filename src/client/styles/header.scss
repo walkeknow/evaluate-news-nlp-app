@@ -1,5 +1,12 @@
+@use 'variables';
+
 header {
     display: flex;
     justify-content: space-between;
-    padding: 10px 40px;
+    padding: 40px;
+    font: 700 2em variables.$primary-font;
+    justify-content: center;
+    p {
+        text-align: center;
+    }
 }
