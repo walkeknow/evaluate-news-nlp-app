@@ -6,6 +6,8 @@ function handleSubmit(event) {
     let url = Client.checkURL(formText)
     console.log("::: Form Submitted :::")
     document.getElementById('tone').innerHTML = `Loading...`;
+    document.getElementById('subjectivity').innerHTML = ``;
+
 
     const inputObject = {
         url,
