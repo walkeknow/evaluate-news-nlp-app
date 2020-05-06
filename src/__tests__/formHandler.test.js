@@ -4,13 +4,13 @@ const projectData = {
     url: 'https://www.timesnownews.com/health/article/coronavirus-breakthrough-italian-scientists-claim-to-have-developed-world-s-first-covid19-vaccine/587796',
     analyzedData: {
         tone: 'positive',
-        subjectivity: 'subjective',
+        subjectivity: 'undefined',
     }
 }
 
 const expectedArray = [
     `<span class="label">Tone:</span> positive`,
-    `<span class="label">Subjectivity:</span> subjective`
+    `<span class="label">Subjectivity:</span> undefined`
 ]
 test('checks if DOM gets updated from object as expected', () => {
     // Set up our document body

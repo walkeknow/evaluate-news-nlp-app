@@ -1,6 +1,5 @@
 var path = require('path')
 const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
 const aylien = require('aylien_textapi');
 const doetenv = require('dotenv');
 
@@ -43,13 +42,13 @@ app.listen(8000, function () {
 
 let url = null
 
-app.post('/sendData', function (req, res) {
+function sendData(req, res) {
     url = req.body.url;
     projectData["url"] = url;
     textapi.sentiment({
         url: url,
         mode: 'document',
-    }, function (error, response) {
+    }, function textapiCallback(error, response) {
         if (error === null) {
             const analyzedData = {
                 tone: response.polarity,
@@ -60,7 +59,8 @@ app.post('/sendData', function (req, res) {
             res.send(projectData);
         } else {
             console.log(error);
-            alert("Sorry! We cannot process your request at the moment")
         }
     });
-})
+}
+
+app.post('/sendData', sendData);

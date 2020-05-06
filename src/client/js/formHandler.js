@@ -54,5 +54,5 @@ function handleSubmit(event) {
     submitForm(inputObject);
 }
 
+export { handleSubmit }
 export { updateUI }
-export { sendData }
