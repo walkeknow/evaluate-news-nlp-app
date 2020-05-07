@@ -14,6 +14,7 @@ const expectedObject = {
     analyzedData: {
         tone: 'neutral',
         subjectivity: 'undefined',
+        text: `The stinging Vespa Mandarinia can grow as large as 2.5 inches in length and is native to Southeast Asia, China and Taiwan.`
     }
 }
 

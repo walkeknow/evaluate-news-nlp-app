@@ -5,6 +5,7 @@ const projectData = {
     analyzedData: {
         tone: 'positive',
         subjectivity: 'undefined',
+        text: `A team of Italian researchers on Wednesday claimed that they have successfully developed a vaccine that can help contain the novel coronavirus that causes COVID-19.`
     }
 }
 
@@ -18,6 +19,7 @@ test('checks if DOM gets updated from object as expected', () => {
         `<div id="results">
             <div id="tone"></div>
             <div id="subjectivity"></div>
+            <div id="text"></div>
         </div>`
 
     expect(updateUI(projectData)).toEqual(

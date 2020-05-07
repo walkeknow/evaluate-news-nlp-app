@@ -21,7 +21,7 @@ const sendData = async (url = '', data = {}) => {
 }
 
 function submitForm(inputObject = {}) {
-    sendData('/sendData', inputObject)
+    sendData('http://localhost:8000/sendData', inputObject)
         .then(function (res) {
             updateUI(res);
         })
@@ -31,9 +31,11 @@ function updateUI(res) {
     const entry = res.analyzedData;
     const tone = document.getElementById('tone');
     const subjectivity = document.getElementById('subjectivity');
+    const text = document.getElementById('text');
     tone.innerHTML = `<span class="label">Tone:</span> ${entry.tone}`;
     subjectivity.innerHTML = `<span class="label">Subjectivity:</span> ${entry.subjectivity}`;
-    return ([tone.innerHTML, subjectivity.innerHTML]);
+    text.innerHTML = `<span class="label">Text:</span> ${entry.text}`;
+    return ([tone.innerHTML, subjectivity.innerHTML, text.innerHTML]);
 }
 
 function handleSubmit(event) {
@@ -43,8 +45,12 @@ function handleSubmit(event) {
     let formText = document.getElementById('name').value
     let url = Client.checkURL(formText)
     console.log("::: Form Submitted :::")
-    document.getElementById('tone').innerHTML = `Loading...`;
+    document.getElementById('tone').innerHTML = ``;
     document.getElementById('subjectivity').innerHTML = ``;
+    document.getElementById('text').innerHTML = ``;
+    if (url) {
+        document.getElementById('tone').innerHTML = `Loading...`;
+    }
 
 
     const inputObject = {

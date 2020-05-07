@@ -44,22 +44,29 @@ form {
     text-align: center;
 }
 
-#results {
-    height: 20vh;
+.scroll-container {
+    padding: 50px 80px;
+    height: 500px;
     background-color: variables.$secondary-color;
     opacity: 0.9;
     margin-top: 5px;
     @extend %box-border;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    overflow: auto;
 }
 
-#tone, #subjectivity{
+#results {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 400px;
+    background-color: variables.$text-background-color;
+}
+
+#tone, #subjectivity, #text{
     font: 1.2em variables.$primary-font;
-    padding: 5px;
+    padding: 10px;
     color: variables.$primary-color-dark;
+    text-align: left;
 }
 
 .label {

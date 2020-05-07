@@ -53,6 +53,7 @@ function sendData(req, res) {
             const analyzedData = {
                 tone: response.polarity,
                 subjectivity: response.subjectivity,
+                text: response.text,
             }
             projectData["analyzedData"] = analyzedData;
             console.log(projectData);
